@@ -6,9 +6,10 @@ require_relative "../lib/dropbox"
 
 class Main
 	def self.call
-		Dailynote::Make.call(nil)
-		Dropbox::Download.call
-		Dropbox::Upload.call
+		Dailynote::Make.call('/Users/fukui.t/Dropbox/Obsidian/c_Daily/2022-08-11.md')
+
+		# Dropbox::Download.call
+		# Dropbox::Upload.call
 	end
 end
 
