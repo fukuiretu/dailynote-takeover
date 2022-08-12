@@ -3,6 +3,8 @@ require 'date'
 
 module Dailynote
   class Make
+    attr_reader :dailynote_dir, :today, :yesterday_dailynote_path
+
     METADATA_ENDLINE = 6
 
     def initialize(dailynote_dir)
@@ -13,9 +15,8 @@ module Dailynote
     def call
       tf = Tempfile.open('tmp') do |fp|
         fp.puts metadata
-
         takeover_content.each { |v| fp.puts v } 
-
+        fp.puts "---\n"
         fp.puts memo
         
         fp
