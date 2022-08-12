@@ -1,6 +1,3 @@
-require "json" # Default gem
-require "rspec" # Bundled gem
-
 require_relative "../lib/dailynote"
 require_relative "../lib/dropbox"
 
