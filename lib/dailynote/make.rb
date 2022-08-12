@@ -3,6 +3,8 @@ require 'date'
 
 module Dailynote
   class Make
+    METADATA_ENDLINE = 6
+
     def initialize(dailynote_dir)
       @dailynote_dir = dailynote_dir
       @today = Time.now
@@ -51,7 +53,7 @@ module Dailynote
       File.foreach(yesterday_dailynote_path) do |line|
         i = i.succ
         
-        next if i < 6
+        next if i < METADATA_ENDLINE
         next if line.strip.end_with?('やること')
         next if line.strip.start_with?('- [x]')
         break if line.strip.start_with?('---')
