@@ -41,7 +41,7 @@ module Dailynote
       [
         '---',
         "aliases: [#{@today.strftime('%Y/%m/%d')},#{@today.strftime('%Y年%m月%d日')}]",
-        "tags: [#{@today.strftime('%Y/%m/%d')},#{@today.strftime('%Y/%m')}]",
+        "tags: [daily,#{@today.strftime('%Y/%m/%d')},#{@today.strftime('%Y/%m')}]",
         '---',
         "\n"
       ].join("\n")
